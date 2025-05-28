@@ -1,0 +1,16 @@
+{
+    "rel": "connectionData",
+    "data": [
+        {
+            "refId": 0,
+            "source": {
+                "block": 1,
+                "output": 3
+            },
+            "endpoint": {
+                "block": 2,
+                "input": 1
+            }
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/leftMenu.css">
+    <link rel="stylesheet" href="styles/workspace.css">
+    <link rel="stylesheet" href="styles/rightBar.css">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Cloudstream Next Gen</title>
+    </head>
+
+
+    <body>
+        <header>
+
+        </header>
+
+
+        <main>
+
+            <div id="leftMenuContainer">
+                <div id="leftMenuHeader"></div>
+                <div class="lmDrop" id="sourceDropdown" data-active="true">
+                    <div class="title">
+                        <div class="icon"></div>
+                        <span class="text">Sources</span>
+                    </div>
+                    <div class="list" id="sourceList"></div>
+                </div>
+                <div class="lmDrop" id="endpointDropdown" data-active="false">
+                    <div class="title">
+                        <div class="icon"></div>
+                        <span class="text">Endpoints</span>
+                    </div>
+                    <div class="list" id="endpointList"></div>
+                </div>
+                <div class="lmDrop" id="transformDropdown" data-active="false">
+                    <div class="title">
+                        <div class="icon"></div>
+                        <span class="text">Transforms</span>
+                    </div>
+                    <div class="list" id="transformList"></div>
+                </div>
+            </div>
+    
+
+            <div class="vertDivider" id="leftMenuRight"></div>
+
+
+            <div id="workspaceViewport">
+                <div id="workspace">
+                    <canvas id="splineCanvas" style="position: absolute"></canvas>
+                    <canvas id="tempCanvas" style="position: absolute"></canvas>
+                </div>
+            </div>
+    
+
+            <div class="vertDivider" id="rightMenuLeft"></div>
+
+
+            <div id="rightBarContainer">
+                <div id="activityMonitor"></div>
+                <div id="inspector"></div>
+            </div>
+
+        </main>
+
+
+        <footer>
+
+        </footer>
+    </body>
+
+    <script src="scripts/generalScripts.js" type="module"></script>
+    <script src="scripts/blockGen/generalBlockGen.js" type="module"></script>
+    <script src="scripts/blockGen/handlerEditOutputs.js" type="module"></script>
+    <script src="scripts/blockGen/handlerTileDrag.js" type="module"></script>
+    <script src="scripts/blockGen/tileHandlers.js" type="module"></script>
+    <script src="scripts/blockGen/block_source.js" type="module"></script>
+    <script src="scripts/blockGen/block_transform.js" type="module"></script>
+    <script src="scripts/fileHandler.js" type="module"></script>
+    <script src="scripts/generalScripts.js" type="module"></script>
+    <script src="scripts/clickHandlers.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+
+</html>

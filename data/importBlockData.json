@@ -1,0 +1,187 @@
+{
+    "rel": "blockData",
+    "data": [
+        {
+            "refId": 1,
+            "basic": {
+                "title": "Aveva Source",
+                "category": "source",
+                "type": "aveva",
+                "x": 10,
+                "y": 50
+            },
+            "inputs": [
+                {
+                    "refId": 1,
+                    "label": "rootUrl",
+                    "value": "something",
+                    "type": "str",
+                    "encrypted": false,
+                    "takesInput": true,
+                    "isEditable": false
+                },
+                {
+                    "refId": 2,
+                    "label": "username",
+                    "value": "something2",
+                    "type": "str",
+                    "encrypted": false,
+                    "takesInput": true,
+                    "isEditable": true
+                },
+                {
+                    "refId": 3,
+                    "label": "password",
+                    "value": "something3",
+                    "type": "str",
+                    "encrypted": true,
+                    "takesInput": true,
+                    "isEditable": true
+                },
+                {
+                    "refId": 4,
+                    "label": "path",
+                    "value": "something4",
+                    "type": "str",
+                    "encrypted": false,
+                    "takesInput": true,
+                    "isEditable": true
+                },
+                {
+                    "refId": 5,
+                    "label": "trigger",
+                    "value": "",
+                    "type": "pulse",
+                    "encrypted": false,
+                    "takesInput": true,
+                    "isEditable": false
+                }
+            ],
+            "actions": [
+                {"label": "Check Auth"},
+                {"label": "Trigger"}
+            ],
+            "outputs": {
+                "display": [
+                    {
+                        "refId": 1,
+                        "name": "timestamp",
+                        "rel": "internal",
+                        "type": "date",
+                        "isArray": false
+                    },
+                    {
+                        "refId": 2,
+                        "name": "_id",
+                        "rel": "internal",
+                        "type": "str",
+                        "isArray": false
+                    },
+                    {
+                        "refId": 3,
+                        "name": "objectOut",
+                        "rel": "source",
+                        "type": "obj",
+                        "isArray": false,
+                        "connectionId": 1
+                    }
+                ],
+                "sourceFields": ["objectOut"]
+            }
+        },
+        {
+            "refId": 2,
+            "basic": {
+                "title": "Parse Object",
+                "category": "transform",
+                "type": "parseObj",
+                "x": 600,
+                "y": 400
+            },
+            "inputs": [
+                {
+                    "refId": 1,
+                    "label": "objectIn",
+                    "value": "something",
+                    "type": "obj",
+                    "encrypted": false,
+                    "takesInput": true,
+                    "isEditable": false,
+                    "connectionId": 1
+                }
+            ],
+            "actions": [
+                {"label": "Refresh Source Fields"}
+            ],
+            "outputs": {
+                "display": [
+                    {
+                        "refId": 1,
+                        "name": "timestamp",
+                        "rel": "internal",
+                        "type": "date",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 2,
+                        "name": "id",
+                        "rel": "source",
+                        "type": "str",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 5,
+                        "name": "floatValue",
+                        "rel": "user",
+                        "type": "float",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 6,
+                        "name": "stringValue",
+                        "rel": "depricated",
+                        "type": "str",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 3,
+                        "name": "_id",
+                        "rel": "internal",
+                        "type": "str",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 4,
+                        "name": "integerValue",
+                        "rel": "source",
+                        "type": "int",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 7,
+                        "name": "objectValue",
+                        "rel": "user",
+                        "type": "obj",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 8,
+                        "name": "integerListValue",
+                        "rel": "user",
+                        "type": "int",
+                        "isArray": true,
+                        "connectionId": null
+                    }
+                ],
+                "sourceFields": ["time", "id", "pressure", "temperature", "lat", "long"]
+            }
+        }
+    ]
+}

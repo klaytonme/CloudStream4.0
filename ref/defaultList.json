@@ -1,0 +1,182 @@
+{
+    "rel": "defaultData",
+    "source": {
+        "aveva": {
+            "basic": {
+                "name": "Aveva Source Default",
+                "title": "Aveva Source",
+                "category": "source",
+                "type": "aveva",
+                "icon": "assets/images/sourceLogos/avevaLogo.svg"
+            },
+            "inputs": [{
+                "refId": 1,
+                "label": "rootUrl",
+                "value": "",
+                "type": "str",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": true
+            }, {
+                "refId": 2,
+                "label": "username",
+                "value": "",
+                "type": "str",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": true
+            }, {
+                "refId": 3,
+                "label": "password",
+                "value": "",
+                "type": "str",
+                "encrypted": true,
+                "takesInput": true,
+                "isEditable": true
+            }, {
+                "refId": 4,
+                "label": "path",
+                "value": "",
+                "type": "str",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": true
+            }, {
+                "refId": 5,
+                "label": "trigger",
+                "value": "",
+                "type": "pulse",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": false
+            }],
+            "actions": [
+                {"label": "Check Auth"},
+                {"label": "Trigger"}
+            ],
+            "outputs": {
+                "display": [{
+                    "refId": 1,
+                    "name": "timestamp",
+                    "rel": "internal",
+                    "type": "date",
+                    "isArray": false
+                }, {
+                    "refId": 3,
+                    "name": "_id",
+                    "rel": "internal",
+                    "type": "str",
+                    "isArray": false
+                }, {
+                    "refId": 4,
+                    "name": "objectOut",
+                    "rel": "source",
+                    "type": "obj",
+                    "isArray": false
+                }],
+                "sourceFields": []
+            }
+        },
+        "constant": {
+            "basic": {
+                "name": "Constant Value",
+                "title": "Constant",
+                "category": "source",
+                "type": "constant"
+            },
+            "inputs": [],
+            "actions": [],
+            "outputs": {
+                "display": [{
+                    "refId": 1,
+                    "name": "value",
+                    "type": "any",
+                    "isArray": false
+                }]
+            }
+        },
+        "timer": {
+            "basic": {
+                "name": "Timer Interrupt",
+                "title": "Timer Interrupt",
+                "category": "source",
+                "type": "timer"
+            },
+            "inputs": [{
+                "refId": 1,
+                "label": "intervalPeriod",
+                "value": "10",
+                "type": "int",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": true
+            },{
+                "refId": 1,
+                "label": "intervalUnits",
+                "value": "s",
+                "type": "str",
+                "encrypted": false,
+                "takesInput": true,
+                "isEditable": true
+            }],
+            "actions": [],
+            "outputs": {
+                "display": [{
+                    "refId": 1,
+                    "name": "timerOutput",
+                    "type": "pulse",
+                    "isArray": false
+                }]
+            }
+        }
+    },
+    "transform": {
+        "parseObj": {
+            "basic": {
+                "name": "Parse Object",
+                "title": "Parse Object",
+                "category": "transform",
+                "type": "parseObj"
+            },
+            "inputs": [
+                {
+                    "type": "obj",
+                    "label": "objectIn",
+                    "isEditable": false,
+                    "isArray": false,
+                    "connectionId": null,
+                    "encrypted": false,
+                    "takesInput": true
+                }
+            ],
+            "actions": [
+                {
+                    "label": "Track Input Fields",
+                    "type": "Toggle",
+                    "options": ["Active", "Deactive"],
+                    "value": "Deactive"
+                }
+            ],
+            "outputs": {
+                "display": [
+                    {
+                        "refId": 1,
+                        "name": "timestamp",
+                        "rel": "internal",
+                        "type": "datetime",
+                        "isArray": false,
+                        "connectionId": null
+                    },
+                    {
+                        "refId": 2,
+                        "name": "remainingObj",
+                        "rel": "internal",
+                        "type": "obj",
+                        "isArray": false,
+                        "connectionId": null
+                    }
+                ]
+            }
+        }
+    }
+}

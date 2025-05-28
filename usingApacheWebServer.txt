@@ -1,0 +1,6 @@
+Web server config is at "/opt/homebrew/etc/httpd/httpd.conf"
+    ^ set working directory from here lines 247 and 248 (on vim  :set number)
+Turn on with `brew services start httpd`
+check with `brew services list`
+
+access webserver at http://localhost/8080
